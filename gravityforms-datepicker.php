@@ -49,6 +49,10 @@ function wps_dateinline_field_input ( $input, $field, $value, $lead_id, $form_id
 }
 add_action('gform_editor_js', 'editor_script');
 function editor_script(){
+    $url = plugins_url('gform_dateinline.js', __FILE__ );
+    wp_enqueue_script("gform_dateinline_script", $url , array("jquery", "jquery-ui-datepicker"), '1.0'); // Note WPS_JS is a constant I’ve set for all my child theme’s custom JS.
+    wp_register_style('datepicker', GFCommon::get_base_url() . '/css/datepicker.min.css', null, GFCommon::$version);
+    wp_enqueue_style('datepicker');
     ?>
     <script type='text/javascript'>
         //adding setting to fields of type "text"
