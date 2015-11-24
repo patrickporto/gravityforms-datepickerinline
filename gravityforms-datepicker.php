@@ -34,13 +34,14 @@ function wps_dateinline_title( $type ) {
 function wps_dateinline_field_input ( $input, $field, $value, $lead_id, $form_id ){
     if ($field["type"] === "dateinline") {
         $input_id = $field["id"];
-        $input_name = $form_id .’_’ . $input_id;
+        $input_name = "input__$form_id" . "_" . $input_id;
+        $field['inputName'] = $input_name;
         $input_class = 'dateinline-' . $input_id . ' ' . esc_attr(isset($field['cssClass'] ) ? $field['cssClass'] : '');
         $div_class = 'div-dateinline-' . $input_id . ' div-' . esc_attr(isset($field['cssClass'] ) ? $field['cssClass'] : '');
         $tabindex = GFCommon::get_tabindex();
         return "<div class='ginput_container'>
                     <div class='dateinline $div_class'></div>
-                    <input type='hidden' id='$input_id' name='input_$input_name' class='gform_dateinline $input_class'
+                    <input type='hidden' id='$input_id' name='$input_name' class='gform_dateinline $input_class'
                         value='$value_safe' tabindex='$tabindex'/>
                 </div>";
     }
