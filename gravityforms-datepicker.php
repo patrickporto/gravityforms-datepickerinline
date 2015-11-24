@@ -63,6 +63,8 @@ function wps_gform_enqueue_scripts( $form, $ajax ) {
         if ($field['type'] === 'dateinline') {
             $url = plugins_url('gform_dateinline.js', __FILE__ );
             wp_enqueue_script("gform_dateinline_script", $url , array("jquery", "jquery-ui-datepicker"), '1.0'); // Note WPS_JS is a constant I’ve set for all my child theme’s custom JS.
+            wp_register_style('datepicker', GFCommon::get_base_url() . '/css/datepicker.min.css', null, GFCommon::$version);
+            wp_enqueue_style('datepicker');
             break;
         }
     }

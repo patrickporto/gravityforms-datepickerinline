@@ -4,5 +4,5 @@ jQuery(document).ready(function($) {
         $that.datepicker({
             altField:  $that.parent().find('input')
         });
-    })
+    });
 });
