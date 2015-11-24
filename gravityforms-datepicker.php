@@ -56,7 +56,7 @@ function editor_script(){
     ?>
     <script type='text/javascript'>
         //adding setting to fields of type "text"
-        fieldSettings["dateinline"] += ",.label_setting,.visibility_setting,.duplicate_setting,.default_value_setting,.placeholder_setting,.description_setting,.css_class_setting";
+        fieldSettings["dateinline"] += ",.label_setting,.visibility_setting,.duplicate_setting,.description_setting,.css_class_setting";
     </script>
     <?php
 }
