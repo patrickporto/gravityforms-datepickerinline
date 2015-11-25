@@ -38,11 +38,10 @@ function wps_dateinline_field_input ( $input, $field, $value, $lead_id, $form_id
         $field['inputName'] = $input_name;
         $input_class = 'dateinline-' . $field['id'] . ' ' . esc_attr(isset($field['cssClass'] ) ? $field['cssClass'] : '');
         $div_class = 'div-dateinline-' . $field['id'] . ' div-' . esc_attr(isset($field['cssClass'] ) ? $field['cssClass'] : '');
-        $tabindex = GFCommon::get_tabindex();
         return "<div class='ginput_container'>
                     <div class='dateinline $div_class'></div>
                     <input type='hidden' id='$input_id' name='$input_name' class='gform_dateinline $input_class'
-                        value='$value_safe' tabindex='$tabindex'/>
+                        value='$value_safe' />
                 </div>";
     }
     return $input;
